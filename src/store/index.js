@@ -15,7 +15,7 @@ export default createStore({
         },
         incrementBy( state, val ) {
             state.count += val
-            state.lastMutation = 'incrementBy'
+            state.lastMutation = 'incrementBy ' + val
         }
     },
     actions: {
