@@ -1,15 +1,12 @@
 import getRandomInt from '@/helpers/getRandomInt'
+import state from './state'
 
 const counterStore = {
 
     namespaced: true,
 
-    state: () => ({
-        count: 1,
-        lastMutation: 'none',
-        isLoading: false,
-        lastRandomInt: 0
-    }),
+    //state: state,//Es redundante tener una llave que tiene el mismo valor y se puede dejar solo una para hacer referencia.
+    state,
     mutations: {
         increment( state ) {
             state.count++
