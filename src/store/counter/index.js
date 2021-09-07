@@ -1,5 +1,6 @@
 import getRandomInt from '@/helpers/getRandomInt'
 import state from './state'
+import * as mutations from './mutations'
 
 const counterStore = {
 
@@ -7,21 +8,7 @@ const counterStore = {
 
     //state: state,//Es redundante tener una llave que tiene el mismo valor y se puede dejar solo una para hacer referencia.
     state,
-    mutations: {
-        increment( state ) {
-            state.count++
-            state.lastMutation = 'increment'
-        },
-        incrementBy( state, val ) {
-            state.count += val
-            state.lastMutation = 'incrementBy ' + val
-            state.lastRandomInt = val
-        },
-        setLoading( state, val ) {
-            state.isLoading = val
-            state.lastMutation = 'setLoading ' + val
-        }
-    },
+    mutations,
     actions: {
         async incrementRandomInt({ commit }) {
 
